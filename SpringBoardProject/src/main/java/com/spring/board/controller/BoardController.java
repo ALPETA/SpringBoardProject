@@ -49,7 +49,6 @@ public class BoardController {
 	//File download
 	@RequestMapping(value = "fileDownload.do")
     public void fileDownload4(HttpServletRequest request,HttpServletResponse response) throws Exception {
-        //String path =  request.getSession().getServletContext().getRealPath("저장경로");
         
         String bFileName =request.getParameter("fileName");
         String realFilename="";

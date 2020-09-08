@@ -40,9 +40,10 @@
 					</div>
 					<button type="submit" class="btn btn-default">저장</button>
 					<button type="reset" class="btn btn-default">초기화</button>
-					<button onclick="location.href =  'getBoardList.do';"
-						class="btn btn-info">취소하기</button>
 				</form>
+				<br>
+				<button onclick="location.href =  'getBoardList.do';"
+						class="btn btn-info">취소하기</button>
 
 			</div>
 			<!--  end panel-body -->
