@@ -21,7 +21,8 @@
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 
-				<form role="form" action="updateBoard.do" method="post">
+				<form role="form" action="updateBoard.do" method="post"
+					enctype="multipart/form-data">
 					<div class="form-group">
 						<label>게시물 번호</label> <input class="form-control" name='bId'
 							value='<c:out value="${board.bId }"/>' readonly="readonly">
@@ -41,11 +42,6 @@
 					<div class="form-group">
 						<label>작성자</label> <input class="form-control" name='bName'
 							value='<c:out value="${board.bName}"/>' readonly="readonly">
-					</div>
-
-					<div class="form-group">
-						<label>이미지 업로드</label> <input type="file" class="form-control"
-							name='imgUpload' />
 					</div>
 
 					<button type="submit" class="btn btn-default">수정하기</button>

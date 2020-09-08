@@ -2,6 +2,8 @@ package com.spring.board.vo;
 
 import java.sql.Timestamp;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class BoardVO {
 	private int bId;
 	private String bName;
@@ -9,6 +11,24 @@ public class BoardVO {
 	private String bContent;
 	private Timestamp bDate;
 	private int bHit;
+	private String bFileName;
+	
+	private MultipartFile uploadFile;
+	
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+	
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	
+	public String getbFileName() {
+		return bFileName;
+	}
+	public void setbFileName(String bFileName) {
+		this.bFileName = bFileName;
+	}
 	public int getbId() {
 		return bId;
 	}
@@ -48,6 +68,7 @@ public class BoardVO {
 	
 	@Override
 	public String toString() {
-		return "BoardVO [bId=" + bId + ",bName=" + bName + ", bTitle=" + bTitle + ",bContent=" +bContent + ",bDate=" + bDate + ",bHit=" + bHit + "]";
+		return "BoardVO [bId=" + bId + ",bName=" + bName + ", bTitle=" + bTitle + ",bContent=" +bContent 
+				+ ",bDate=" + bDate + ",bHit=" + bHit + ",bFileName=" + bFileName+ "]";
 	}
 }

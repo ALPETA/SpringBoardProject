@@ -44,6 +44,12 @@
 						value='<c:out value="${board.bName}"/>' readonly="readonly">
 				</div>
 
+				<div>
+					<c:if test="${board.bFileName ne null}">
+						<label>첨부파일</label>
+						<a href="fileDownload.do?fileName=${board.bFileName}">${board.bFileName}</a>
+					</c:if>
+				</div>
 
 
 				<button
