@@ -21,9 +21,11 @@
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 
-				<div class="form-group">
+				<div class="form-inline form-group">
 					<label>게시물 번호</label> <input class="form-control" name='bId'
 						value='<c:out value="${board.bId}"/>' readonly="readonly">
+					<label>조회수</label> <input class="form-control" name='bHit'
+						value='<c:out value="${board.bHit}"/>' readonly="readonly">
 				</div>
 
 				<div class="form-group">

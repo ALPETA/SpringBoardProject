@@ -30,7 +30,9 @@ public class BoardDAO {
 
 	public BoardVO getContent(BoardVO vo) {
 		System.out.println("===> Mybatis로 getContent() 기능 처리");
+		mybatis.update("BoardMapper.upHit", vo);
 		return (BoardVO) mybatis.selectOne("BoardMapper.getContent", vo);
+		
 	}
 
 	public List<BoardVO> getBoardList() {

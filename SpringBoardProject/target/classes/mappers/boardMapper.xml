@@ -6,7 +6,7 @@
 	<![CDATA[
 		SELECT *
 		FROM mvc_board
-		ORDER BY bId DESC
+		ORDER BY bId
 		]]>
 	</select>
 	
@@ -17,6 +17,14 @@
 			WHERE bId = #{bId}
 		]]>
 	</select>
+	
+	<update id="upHit">
+		<![CDATA[
+			UPDATE mvc_board SET
+			bHit = bHit+1 
+			WHERE bId = #{bId}
+		]]>
+	</update>
 	
 	<select id="insertBoard">
 		<![CDATA[
