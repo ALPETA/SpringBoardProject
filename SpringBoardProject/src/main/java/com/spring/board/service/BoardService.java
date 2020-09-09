@@ -3,10 +3,11 @@ package com.spring.board.service;
 import java.util.List;
 
 import com.spring.board.vo.BoardVO;
+import com.spring.board.vo.PagingCriteria;
 
 public interface BoardService {
 	// 글 목록 조회
-	List<BoardVO> getBoardList();
+	List<BoardVO> getBoardList(PagingCriteria paging);
 
 	// 글 상세 조회
 	BoardVO getContent(BoardVO vo);
@@ -21,4 +22,7 @@ public interface BoardService {
 
 	// 글 삭제
 	void deleteBoard(BoardVO vo);
+	
+	//글 갯수
+		int totalCnt();
 }

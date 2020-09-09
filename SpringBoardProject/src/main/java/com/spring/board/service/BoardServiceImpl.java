@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.board.dao.BoardDAO;
 import com.spring.board.vo.BoardVO;
+import com.spring.board.vo.PagingCriteria;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -16,8 +17,8 @@ public class BoardServiceImpl implements BoardService {
 	private BoardDAO boardDAO;
 
 	@Override
-	public List<BoardVO> getBoardList() {
-		return boardDAO.getBoardList();
+	public List<BoardVO> getBoardList(PagingCriteria paging) {
+		return boardDAO.getBoardList(paging);
 	}
 
 	@Override
@@ -45,4 +46,8 @@ public class BoardServiceImpl implements BoardService {
 		boardDAO.deleteBoard(vo);
 	}
 
+	@Override
+	public int totalCnt() {
+		return boardDAO.totalCnt();
+	}
 }

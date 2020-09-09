@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.spring.board.vo.BoardVO;
+import com.spring.board.vo.PagingCriteria;
 
 @Repository
 public class BoardDAO {
@@ -35,8 +36,13 @@ public class BoardDAO {
 		
 	}
 
-	public List<BoardVO> getBoardList() {
+	public List<BoardVO> getBoardList(PagingCriteria paging) {
 		System.out.println("list");
-		return mybatis.selectList("BoardMapper.getBoardList");
+		return mybatis.selectList("BoardMapper.getBoardList",paging);
+	}
+	
+	public int totalCnt() {
+		System.out.println("cnt");
+		return mybatis.selectOne("BoardMapper.getTotalCnt");
 	}
 }

@@ -3,10 +3,13 @@
 
 <mapper namespace="BoardMapper">
 	<select id="getBoardList" resultType="BoardVO">
-	<![CDATA[
-		SELECT *
-		FROM mvc_board
-		ORDER BY bId
+		<![CDATA[
+			SELECT *
+			FROM	(SELECT /*+INDEX_DESC(mvc_board pk_board) */
+						rownum rn, bId, bName, bTitle, bDate, bHit,bFileName 
+					from mvc_board where rownum <= #{pageNum} * #{amount})
+			where rn > (#{pageNum}-1) * #{amount}
+			ORDER BY bId DESC
 		]]>
 	</select>
 	
@@ -28,8 +31,8 @@
 	
 	<select id="insertBoard">
 		<![CDATA[
-		INSERT INTO mvc_board(bName,bTitle,bContent,bDate,bFileName)
-		VALUES(#{bName}, #{bTitle}, #{bContent}, now(), #{bFileName})
+		INSERT INTO mvc_board(bId, bName, bTitle, bContent, bFileName)
+		VALUES(MVC_BOARD_SEQ.NEXTVAL, #{bName}, #{bTitle}, #{bContent}, #{bFileName, jdbcType=VARCHAR})
 		]]>
 	</select>
 	
@@ -48,4 +51,8 @@
 		WHERE bId = #{bId}
 		]]>
 	</delete>
+	<select id="getTotalCnt" resultType="int">
+		SELECT count(*)
+		FROM mvc_board
+	</select>
 </mapper>
