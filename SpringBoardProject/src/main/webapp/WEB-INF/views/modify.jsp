@@ -45,9 +45,6 @@
 					</div>
 
 					<button type="submit" class="btn btn-default">수정하기</button>
-					<button
-						onclick="location.href =  'deleteBoard.do?bId=${board.bId}';"
-						class="btn btn-default">삭제하기</button>
 					<button onclick="location.href =  'getBoardList.do';"
 						class="btn btn-info">취소하기</button>
 				</form>

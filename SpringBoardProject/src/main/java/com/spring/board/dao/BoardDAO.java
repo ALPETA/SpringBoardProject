@@ -35,6 +35,12 @@ public class BoardDAO {
 		return (BoardVO) mybatis.selectOne("BoardMapper.getContent", vo);
 		
 	}
+	
+	public BoardVO modifyContent(BoardVO vo) {
+		System.out.println("getContent");
+		return (BoardVO) mybatis.selectOne("BoardMapper.getContent", vo);
+		
+	}
 
 	public List<BoardVO> getBoardList(PagingCriteria paging) {
 		System.out.println("list");

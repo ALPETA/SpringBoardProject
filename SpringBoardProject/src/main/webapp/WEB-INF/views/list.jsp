@@ -85,7 +85,6 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		
-		//페이지 번호 이동
 		$('#pagingDiv a').click(function(e){
 			e.preventDefault();
 			$('#pageNum').val($(this).attr("href"));
@@ -93,7 +92,6 @@
 			
 		});
 		
-		//게시글에 pageNum넘기기
 		$('table a').click(function(e){
 			e.preventDefault();
 			var html = "<input type='hidden' name='bId' value='"+$(this).attr("href")+"'>";

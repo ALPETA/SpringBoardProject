@@ -32,7 +32,7 @@
 	<select id="insertBoard">
 		<![CDATA[
 		INSERT INTO mvc_board(bId, bName, bTitle, bContent, bFileName)
-		VALUES(MVC_BOARD_SEQ.NEXTVAL, #{bName}, #{bTitle}, #{bContent}, #{bFileName, jdbcType=VARCHAR})
+		VALUES(tmp_seq.NEXTVAL, #{bName}, #{bTitle}, #{bContent}, #{bFileName, jdbcType=VARCHAR})
 		]]>
 	</select>
 	

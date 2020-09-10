@@ -33,7 +33,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardVO moveModifytBoard(BoardVO vo) {
-		return boardDAO.getContent(vo);
+		return boardDAO.modifyContent(vo);
 	}
 
 	@Override

@@ -126,7 +126,7 @@ public class BoardController {
 	// 글 수정 페이지 이동
 	@RequestMapping("/moveModifytBoard.do")
 	public String moveModifytBoard(BoardVO vo, Model model) {
-		model.addAttribute("board", boardService.getContent(vo));
+		model.addAttribute("board", boardService.moveModifytBoard(vo));
 		return "modify"; // View 이름 리턴
 	}
 
